@@ -3,9 +3,15 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   root 'static_pages#home'
-  get '/stores' => 'stores#index'
-  get '/stores/:id' => 'stores#find'
-  get '/products/:id' => 'products#find'
+  #get '/stores' => 'stores#index'
+  #get '/stores/:id' => 'stores#find'
+  #get '/products/:id' => 'products#find'
+
+  resources :stores do
+    resources :products, only: [:index, :show, :new, :create]
+  end
+
+  resources :stores, only: [:index, :show, :new, :create]
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
