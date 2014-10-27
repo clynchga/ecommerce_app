@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141020235812) do
+ActiveRecord::Schema.define(version: 20141027235700) do
 
   create_table "products", force: true do |t|
     t.text     "title"
     t.text     "description"
     t.float    "price"
-    t.integer  "store"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "store_id"
   end
 
   create_table "stores", force: true do |t|

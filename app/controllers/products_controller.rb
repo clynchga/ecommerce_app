@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
 
+before_filter :load_store
+
 def show
 	@product = Product.find(params[:id])
 end
@@ -24,7 +26,17 @@ def create
        		format.json { render json: @product.errors, status: :unprocessable_entity }
 		end
 	end
-
 end
+
+private 
+def load_store
+	@store = Store.find(params[:store])
+end
+
+ private
+ def product_params
+ 	params.require(:product).permit(:title, :description, :price)
+ end
+
 
 end
