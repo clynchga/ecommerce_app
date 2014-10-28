@@ -1,7 +1,7 @@
 <h2><%= "Here are all the products for #{@store.location}" %></h2>
 
 <% @products.each do |product| %>
-	<p><%= link_to "#{product.title}" , "/store/#{product.store_id}/products/#{product.id}" %></p>
+	<p><%= link_to "#{product.title}" , "/stores/#{product.store_id}/products/#{product.id}" %></p>
 <% end %>
 
 <%= link_to "Create a new product" , new_store_product_path %>
