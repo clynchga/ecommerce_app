@@ -1,5 +1,5 @@
 <!--- list the product details -->
-<h2><%="Check out this awesome product information!" %></h2>
+<h2><%="Check out this awesome product from our #{@store.location} store!" %></h2>
 
 <p><%= "----" %></p>
 <p><%= "Title: #{@product.title}" %></p>
@@ -7,6 +7,4 @@
 <p><%= "Price: $#{@product.price}" %></p>
 <p><%= "----" %></p>
 
-<p><%= link_to "Back" , "/stores/#{@product.store_id}/products" %></p>
-
-<!--- link to create a new product -->
+<p><%= link_to "All products available in #{@store.location}" , "/stores/#{@product.store_id}/products" %></p>
