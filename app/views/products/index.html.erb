@@ -1,0 +1,5 @@
+<h2><%= "Here are all the products for #{@store.location}" %></h2>
+
+<% @products.each do |product| %>
+	<%= link_to "#{product.title}" , store_product_path %>
+<% end %>

@@ -1,7 +1,7 @@
 <h2>Here are all our wonderful stores: </h2>
 
 <% @stores.each do |s| %>
-	<p><%= "Store No. #{s.id} > " %><%= link_to "#{s.location}" , "/stores/#{s.id}" %></p>
+	<p><%= "Store No. #{s.id} > " %><%= link_to "#{s.location}" , "/stores/#{s.id}/products" %></p>
 <% end %>
 
 <!-- create a new store entry section goes here -->

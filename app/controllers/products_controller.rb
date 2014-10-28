@@ -7,15 +7,15 @@ def show
 end
 
 def index
-	@products = Product.all
+	@products = @store.products.all
 end
 
 def new 
-	@product = Product.new
+	@product = @store.product.new
 end
 
 def create
-	@product = Product.new
+	@product = @store.product.new
 
 	respond_to do |format|
 		if @product.save
@@ -30,7 +30,7 @@ end
 
 private 
 def load_store
-	@store = Store.find(params[:store])
+	@store = Store.find(params[:store_id])
 end
 
  private
