@@ -11,15 +11,15 @@ def index
 end
 
 def new 
-	@product = @store.product.new
+	@product = @store.products.new
 end
 
 def create
-	@product = @store.product.new
+	@product = @store.products.new(product_params)
 
 	respond_to do |format|
 		if @product.save
-       		format.html { redirect_to @product, notice: 'Product was successfully created.' }
+       		format.html { redirect_to store_products_path, notice: 'Product was successfully created.' }
        		format.json { render :show, status: :created, location: @product }
 		else
       	 	format.html { render :new }

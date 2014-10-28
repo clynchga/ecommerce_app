@@ -1,0 +1,5 @@
+<h2><%="Create a new product for #{@store.location}:" %></h2>
+
+<%= render 'form' %>
+
+<%=link_to "Back" , "/stores/#{@store.id}/products" %>
