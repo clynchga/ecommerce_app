@@ -4,7 +4,7 @@
 <p><%= "----" %></p>
 <p><%= "Title: #{@product.title}" %></p>
 <p><%= "Description: #{@product.description}" %></p>
-<p><%= "Price: $#{@product.price}" %></p>
+<p><%= "Price: $" + ('%.2f' % @product.price.to_s) %></p>
 <p><%= "----" %></p>
 
 <p><%= link_to "All products available in #{@store.location}" , "/stores/#{@product.store_id}/products" %></p>
